@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* "Lobster", sans-serif; */
+
 html{
     box-sizing: border-box;
 }
@@ -9,6 +13,12 @@ html{
 
 }
 
+:root{
+    --red-color:rgb(116, 13, 13);
+    --green-color: rgb(6, 61, 6);
+    --cursiva:"Lobster", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;  
@@ -17,6 +27,7 @@ body {
 h1{
     color: rgb(116, 13, 13);
 }
+
 
 span{
     color: rgb(6, 61, 6);
@@ -31,7 +42,7 @@ span{
 }
 
 header{
-    background: linear-gradient(to top, rgba(70, 47, 5, 0), rgba(243, 247, 6, 0.397)),
+    background: linear-gradient(to top, rgba(70, 47, 5, .4), rgba(243, 247, 6, 0.267)),
     url('https://cafetteria.es/wp-content/uploads/cafe-Jamaica-blue-mountain-1024x585.jpg');
     height: 100vh;
     background-size: cover;
@@ -49,6 +60,7 @@ header > div.navigation{
     background-color: transparent;
     backdrop-filter:blur(10px);
     position: fixed;
+    z-index: 2;
 }
 
 header > div.navigation > h2{
@@ -101,17 +113,18 @@ header > div.title {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
+    
 }
 
 header > div.title > p{
     color:white;
+    font-family: "Lobster", sans-serif;;
 }
 
 main > section.grid-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(26, 141, 26, 0.719);
 }
 
 main > section.grid-container > article.about-us{
@@ -142,8 +155,128 @@ main > section.grid-container> article.about-us > .box:nth-child(2){
     justify-content: center;
     align-items: center;
     padding: 5px;
+}
+
+.card-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 80px;
+}
+
+.card{
+    flex-basis: calc((100% - 20px)/ 3) ;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    overflow: hidden;
+    background-color: var(--red-color);
+    color: white;
     
+}
+
+.card > .header-card > img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: top;   
+}
+
+.card > .body-card{
+    padding: 10px;
+}
+
+.card > .footer-card{
+    padding: 10px;
+
+}
+.card > .footer-card>p:nth-child(1){
+    font-weight: bold;
+    line-height: 0;
+}
+
+.staff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+
+.container-staff{
+    display: grid;
+    height: 100vh;
+    width: 60%;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "ceo cto cto"
+    "ceo admin admin"
+    "barista1 barista2 barista3";
+    
+    
+}
+
+.container-staff > figure{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    overflow: hidden;
 
 }
 
+.container-staff>.img-1{
+    grid-area: ceo;
+    
+}
 
+
+.container-staff>.img-2{
+    grid-area: cto;
+    
+    
+}
+
+.container-staff>.img-3{
+    grid-area: admin;
+}
+
+.container-staff>.img-4{
+    grid-area: barista1;
+}
+
+.container-staff>.img-5{
+    grid-area: barista2;
+}
+
+.container-staff>.img-6{
+    grid-area: barista3;
+}
+
+
+.img-1>img,
+.img-2>img,
+.img-3>img,
+.img-4>img,
+.img-5>img,
+.img-6>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    border-radius: 10px;
+    object-position: 68%;    
+}
+.img-2 > img{
+    object-position: 0 20%;
+}
+
+.img-3 > img{
+    object-position: 0 20%;
+}
+
+
+
+
+ 
